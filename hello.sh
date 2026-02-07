@@ -1,6 +1,3 @@
 #!/bin/bash
-echo "Hello from GitHub"
-date
-whoami
-pwd
+echo "Hello from Jenkins on $(hostname)"
 

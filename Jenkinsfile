@@ -2,10 +2,16 @@ pipeline {
   agent { label 'my' }
 
   stages {
-    stage('Test') {
+    stage('Checkout') {
       steps {
-        sh 'echo "Running on node my"'
-        sh 'hostname'
+        checkout scm
+      }
+    }
+
+    stage('Run script') {
+      steps {
+        sh 'ls -la'
+        sh './hello.sh'
       }
     }
   }
