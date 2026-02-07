@@ -1,16 +1,9 @@
 pipeline {
-  agent { label 'my' }
-
+  agent any
   stages {
-    stage('Checkout') {
+    stage('Test') {
       steps {
-        checkout scm
-      }
-    }
-
-    stage('Run script') {
-      steps {
-        sh 'ls -la'
+        sh 'echo "Running on built-in node"'
         sh './hello.sh'
       }
     }
